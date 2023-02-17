@@ -27,8 +27,8 @@ phases:
     commands:
       - docker tag group2-jxa-2-eksdemo 962804699607.dkr.ecr.us-west-2.amazonaws.com/group2c2eks-jxa-repo:latest
       - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/group2c2eks-jxa-repo:latest
-      - kubectl apply -f deployment.yaml
-      - kubectl apply -f service.yaml
-      - kubectl rollout restart -f deployment.yaml
+      - kubectl apply -f deployment.yml
+      - kubectl apply -f service.yml
+      - kubectl rollout restart -f deployment.yml
       - kubectl get svc --all-namespaces
     
