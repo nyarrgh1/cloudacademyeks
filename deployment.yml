@@ -17,7 +17,7 @@ spec:
       labels:
         app: group2-jxa-2-demo
     spec:
-    containers:
+      containers:
       - image: 962804699607.dkr.ecr.us-west-2.amazonaws.com/group2c2eks-jxa-repo:latest
         imagePullPolicy: Always
         name: cicd-demo
