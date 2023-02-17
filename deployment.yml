@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: group2-jxa-2-demo
+    app.kubernetes.io/instance: cicd-demo-instance
+    app.kubernetes.io/version: '1.0.0'
+    app.kubernetes.io/managed-by: kubectl
+  name: cicd-demo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: group2-jxa-2-demo
+  template:
+    metadata:
+      labels:
+        app: group2-jxa-2-demo
+    spec:
+    containers:
+      - image: 962804699607.dkr.ecr.us-west-2.amazonaws.com/group2c2eks-jxa-repo:latest
+        imagePullPolicy: Always
+        name: cicd-demo
+        ports:
+          - containerPort: 3000
+      
